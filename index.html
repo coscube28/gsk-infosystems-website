@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSK Infosystems | Forest Diversion Consultancy, Survey &amp; CAD/GIS — Chandrapur</title>
+<meta name="description" content="GSK Infosystems is a Chandrapur-based technical consultancy specializing in forest diversion consultancy, DGPS survey, CAD & GIS mapping, and land acquisition support for government and private projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #EDEEE4;
+    --paper-deep: #E3E5D8;
+    --ink: #1B2A33;
+    --ink-soft: #46565f;
+    --blue: #2C5A7C;
+    --blue-deep: #203F58;
+    --terracotta: #B24B3A;
+    --moss: #55684C;
+    --gold: #B98B34;
+    --line: rgba(27,42,51,0.14);
+    --line-strong: rgba(27,42,51,0.28);
+    --white: #F8F8F4;
+
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Serif', serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    --max: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--display);
+    color:var(--blue-deep);
+    margin:0 0 0.4em 0;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:var(--blue);}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--terracotta);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--terracotta);
+    display:inline-block;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(237,238,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 28px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .brand img{height:42px; width:auto;}
+  .brand-text{font-family:var(--display); font-weight:600; font-size:1.05rem; color:var(--blue-deep); letter-spacing:0.01em;}
+  .brand-text span{display:block; font-family:var(--mono); font-weight:400; font-size:0.62rem; letter-spacing:0.1em; color:var(--ink-soft); text-transform:uppercase; margin-top:2px;}
+
+  nav.links{display:flex; align-items:center; gap:32px;}
+  nav.links a{
+    text-decoration:none;
+    color:var(--ink);
+    font-family:var(--mono);
+    font-size:0.8rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    position:relative;
+    padding:4px 0;
+  }
+  nav.links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--terracotta);
+    transition:width 0.25s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    background:var(--blue-deep);
+    color:var(--white) !important;
+    padding:10px 18px;
+    border-radius:2px;
+    text-decoration:none;
+  }
+  .nav-cta::after{display:none;}
+  .nav-cta:hover{background:var(--terracotta);}
+
+  .menu-btn{
+    display:none;
+    background:none;
+    border:1px solid var(--line-strong);
+    padding:8px 10px;
+    cursor:pointer;
+    color:var(--ink);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:100px 0 90px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-contours{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    opacity:0.55;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.2vw, 3.4rem);
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--terracotta);
+  }
+  .hero-sub{
+    font-family:var(--body);
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:18px 0 30px;
+  }
+  .hero-cta{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);
+    font-size:0.82rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:2px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .btn-primary{background:var(--blue-deep); color:var(--white);}
+  .btn-primary:hover{background:var(--terracotta); transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line-strong); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--terracotta); color:var(--terracotta); transform:translateY(-2px);}
+
+  .hero-figure{
+    position:relative;
+    aspect-ratio:1/1;
+    max-width:360px;
+    margin-left:auto;
+  }
+  .hero-figure svg{width:100%; height:100%;}
+
+  .coord-tag{
+    position:absolute;
+    font-family:var(--mono);
+    font-size:0.68rem;
+    color:var(--ink-soft);
+    background:var(--paper);
+    padding:3px 8px;
+    border:1px solid var(--line-strong);
+    white-space:nowrap;
+  }
+  .coord-tag.t1{top:6%; left:-6%;}
+  .coord-tag.t2{bottom:8%; right:-10%;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:86px 0;}
+  section.alt{background:var(--paper-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.6rem, 2.6vw, 2.3rem);}
+  .section-head p{color:var(--ink-soft); font-size:1.02rem; max-width:56ch;}
+
+  /* ---------- Overview strip ---------- */
+  .overview{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .overview p{font-size:1.05rem; color:var(--ink-soft);}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-strong); border:1px solid var(--line-strong);}
+  .stat{background:var(--paper); padding:22px 20px;}
+  .stat b{font-family:var(--display); font-size:1.7rem; color:var(--blue-deep); display:block;}
+  .stat span{font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);}
+
+  /* ---------- Services ---------- */
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .service-card{
+    background:var(--paper);
+    padding:32px 28px;
+    transition:background 0.2s ease;
+  }
+  .service-card:hover{background:var(--white);}
+  .service-num{font-family:var(--mono); font-size:0.72rem; color:var(--terracotta); letter-spacing:0.08em;}
+  .service-card h3{font-size:1.08rem; margin:14px 0 10px; color:var(--blue-deep);}
+  .service-card p{font-size:0.94rem; color:var(--ink-soft); margin:0;}
+
+  /* ---------- Expertise ---------- */
+  .expertise-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .chip{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    border:1px solid var(--line-strong);
+    padding:8px 14px;
+    color:var(--ink);
+    background:var(--paper);
+  }
+  .cred-list{list-style:none; margin:0; padding:0;}
+  .cred-list li{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    display:flex;
+    gap:12px;
+  }
+  .cred-list li::before{content:"—"; color:var(--terracotta);}
+  .cred-list li:first-child{padding-top:0;}
+
+  /* ---------- Projects: traverse timeline ---------- */
+  .traverse{position:relative; padding-left:0;}
+  .traverse-line{
+    position:absolute;
+    left:70px;
+    top:14px;
+    bottom:14px;
+    width:0;
+    border-left:2px dashed var(--line-strong);
+    z-index:0;
+  }
+  .station{
+    position:relative;
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:0 30px;
+    margin-bottom:44px;
+  }
+  .station:last-child{margin-bottom:0;}
+  .station-marker{
+    display:flex;
+    justify-content:center;
+    padding-top:4px;
+  }
+  .station-dot{
+    width:14px; height:14px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--terracotta);
+    position:relative;
+    z-index:1;
+  }
+  .station-body{
+    background:var(--paper);
+    border:1px solid var(--line-strong);
+    padding:22px 26px;
+  }
+  .station-id{font-family:var(--mono); font-size:0.72rem; color:var(--terracotta); letter-spacing:0.08em; display:block; margin-bottom:6px;}
+  .station-body h3{font-size:1.12rem; margin-bottom:8px;}
+  .station-body p{margin:0 0 12px; color:var(--ink-soft); font-size:0.95rem;}
+  .station-meta{display:flex; flex-wrap:wrap; gap:18px;}
+  .station-meta span{
+    font-family:var(--mono);
+    font-size:0.75rem;
+    color:var(--ink-soft);
+    border-left:2px solid var(--moss);
+    padding-left:8px;
+  }
+
+  /* ---------- Institutional ---------- */
+  .inst-list{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+  }
+  .inst-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px 20px;
+    background:var(--paper);
+    border:1px solid var(--line-strong);
+    font-family:var(--mono);
+    font-size:0.85rem;
+    color:var(--ink);
+  }
+  .inst-item::before{content:"◆"; color:var(--blue); font-size:0.7rem;}
+
+  .strength-row{
+    margin-top:52px;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .strength-item{background:var(--paper-deep); padding:20px 16px; font-family:var(--mono); font-size:0.78rem; color:var(--ink-soft); line-height:1.5;}
+
+  /* ---------- About / Leadership ---------- */
+  .about-wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .proprietor-card{
+    background:var(--paper-deep);
+    border:1px solid var(--line-strong);
+    padding:34px;
+    position:relative;
+  }
+  .proprietor-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:4px;
+    background:linear-gradient(90deg, var(--blue), var(--terracotta));
+  }
+  .proprietor-name{font-family:var(--display); font-size:1.3rem; color:var(--blue-deep); margin-bottom:4px;}
+  .proprietor-role{font-family:var(--mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--terracotta); margin-bottom:18px; display:block;}
+
+  /* ---------- Contact ---------- */
+  .contact-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .contact-panel{background:var(--blue-deep); color:var(--white); padding:48px 44px;}
+  .contact-panel h2{color:var(--white);}
+  .contact-panel p{color:rgba(248,248,244,0.75);}
+  .contact-detail{margin-top:30px;}
+  .contact-detail .label{font-family:var(--mono); font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--terracotta); display:block; margin-bottom:4px;}
+  .contact-detail .value{font-family:var(--body); font-size:1.05rem; margin-bottom:22px;}
+  .contact-detail a{color:var(--white); text-decoration:none; border-bottom:1px solid rgba(248,248,244,0.4);}
+  .contact-detail a:hover{border-color:var(--terracotta);}
+
+  .contact-form-panel{background:var(--paper); padding:48px 44px;}
+  .field{margin-bottom:20px;}
+  .field label{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    display:block;
+    margin-bottom:8px;
+  }
+  .field input, .field textarea{
+    width:100%;
+    background:var(--white);
+    border:1px solid var(--line-strong);
+    padding:12px 14px;
+    font-family:var(--body);
+    font-size:0.95rem;
+    color:var(--ink);
+    border-radius:2px;
+  }
+  .field input:focus, .field textarea:focus{
+    outline:2px solid var(--blue);
+    outline-offset:1px;
+  }
+  .field textarea{resize:vertical; min-height:100px;}
+  .form-note{font-family:var(--mono); font-size:0.74rem; color:var(--ink-soft); margin-top:8px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:rgba(248,248,244,0.6);
+    padding:32px 0;
+  }
+  .footer-wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    font-family:var(--mono);
+    font-size:0.75rem;
+  }
+  .footer-wrap a{color:rgba(248,248,244,0.75);}
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  /* ---------- Focus visibility ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--terracotta);
+    outline-offset:2px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-figure{max-width:260px; margin:36px auto 0;}
+    .overview{grid-template-columns:1fr;}
+    .expertise-wrap{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .about-wrap{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+    .inst-list{grid-template-columns:1fr;}
+    .strength-row{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width: 720px){
+    nav.links{display:none;}
+    .menu-btn{display:block;}
+    .service-grid{grid-template-columns:1fr;}
+    .traverse-line{left:22px;}
+    .station{grid-template-columns:44px 1fr; gap:0 16px;}
+    .strength-row{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.jpeg" alt="GSK Infosystems logo">
+      <span class="brand-text">GSK Infosystems<span>Survey · Forest Diversion · CAD &amp; GIS</span></span>
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+919607704288" class="nav-cta">Call now</a>
+    <button class="menu-btn" aria-label="Toggle menu" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="hero-contours" aria-hidden="true">
+    <svg width="100%" height="100%" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="#2C5A7C" stroke-width="1">
+        <path d="M-50,600 C 150,520 300,650 500,560 C 700,470 850,600 1050,520 C 1150,480 1200,500 1250,480" opacity="0.35"/>
+        <path d="M-50,640 C 150,560 300,690 500,600 C 700,510 850,640 1050,560 C 1150,520 1200,540 1250,520" opacity="0.28"/>
+        <path d="M-50,680 C 150,600 300,730 500,640 C 700,550 850,680 1050,600 C 1150,560 1200,580 1250,560" opacity="0.2"/>
+        <path d="M-50,60 C 150,120 320,20 520,90 C 700,150 880,40 1080,110 C 1150,135 1200,110 1250,130" opacity="0.3"/>
+        <path d="M-50,20 C 150,80 320,-20 520,50 C 700,110 880,0 1080,70 C 1150,95 1200,70 1250,90" opacity="0.22"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Chandrapur, Maharashtra · Est. technical consultancy</div>
+      <h1>Mapping land. Navigating approvals. <em>Enabling development.</em></h1>
+      <p class="hero-sub">GSK Infosystems is a Chandrapur-based technical consultancy specializing in forest diversion consultancy, DGPS survey, CAD &amp; GIS mapping, and land acquisition support — for government departments and private-sector project developers.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Discuss a project</a>
+        <a href="#projects" class="btn btn-ghost">See project record →</a>
+      </div>
+    </div>
+    <div class="hero-figure" aria-hidden="true">
+      <span class="coord-tag t1">20.0°N</span>
+      <span class="coord-tag t2">79.3°E</span>
+      <svg viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="130" fill="none" stroke="#2C5A7C" stroke-width="2"/>
+        <circle cx="150" cy="150" r="95" fill="none" stroke="#2C5A7C" stroke-width="1" opacity="0.4"/>
+        <circle cx="150" cy="150" r="60" fill="none" stroke="#2C5A7C" stroke-width="1" opacity="0.25"/>
+        <g font-family="IBM Plex Mono" font-size="12" fill="#46565f">
+          <text x="145" y="34" text-anchor="middle">N</text>
+          <text x="145" y="272" text-anchor="middle">S</text>
+          <text x="22" y="155" text-anchor="middle">W</text>
+          <text x="278" y="155" text-anchor="middle">E</text>
+        </g>
+        <polygon points="150,60 170,150 150,150" fill="#B24B3A"/>
+        <polygon points="150,60 130,150 150,150" fill="#8f3a2c"/>
+        <polygon points="150,240 170,150 150,150" fill="#2C5A7C"/>
+        <polygon points="150,240 130,150 150,150" fill="#203F58"/>
+        <circle cx="150" cy="150" r="5" fill="#1B2A33"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="overview">
+  <div class="wrap overview reveal">
+    <div>
+      <div class="eyebrow">Company overview</div>
+      <h2>Field-to-drawing capability, built for forest and land clearance work</h2>
+      <p>The firm has undertaken assignments involving forest-land measurement, diversion proposals, clearance support, and survey &amp; planning work for infrastructure and development projects — including irrigation, canal and pipeline works, forest academy infrastructure, railway lines, village rehabilitation, and ecological development projects.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><b>300+ ha</b><span>Largest single village rehabilitation survey</span></div>
+      <div class="stat"><b>6+</b><span>Government &amp; institutional bodies engaged</span></div>
+      <div class="stat"><b>DGPS</b><span>Primary field survey methodology</span></div>
+      <div class="stat"><b>CAD+GIS</b><span>Integrated drawing &amp; mapping output</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>Core services</h2>
+      <p>End-to-end technical support across the life of a forest-diversion or land-survey assignment — from first field measurement to final clearance documentation.</p>
+    </div>
+    <div class="service-grid reveal">
+      <div class="service-card">
+        <span class="service-num">SVC / 01</span>
+        <h3>Forest Diversion Consultancy</h3>
+        <p>End-to-end technical support for forest-land diversion proposals, surveys, documentation and clearance-related requirements.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">SVC / 02</span>
+        <h3>DGPS &amp; Land Survey</h3>
+        <p>Accurate DGPS-based field surveys, boundary demarcation, area measurement and preparation of survey outputs.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">SVC / 03</span>
+        <h3>CAD &amp; GIS Services</h3>
+        <p>Preparation of professional CAD drawings, GIS maps, thematic maps and spatial project plans.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">SVC / 04</span>
+        <h3>Forest Proposal Preparation</h3>
+        <p>Preparation of technical plans, estimates, maps and supporting documents required for forest-diversion proposals.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">SVC / 05</span>
+        <h3>Forest Clearance Support</h3>
+        <p>Technical assistance for documentation, compliance requirements and project coordination during the forest-clearance process.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">SVC / 06</span>
+        <h3>CA Land Acquisition</h3>
+        <p>Land identification, survey, documentation and acquisition support for Compensatory Afforestation land, for government departments and private companies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="expertise">
+  <div class="wrap expertise-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Technical expertise</div>
+      <h2>Qualified in the field and at the drawing table</h2>
+      <p style="color:var(--ink-soft); margin-bottom:0;">A Bachelor of Engineering foundation with postgraduate training in CAD &amp; GIS, applied directly to field survey and technical drawing work.</p>
+      <div class="chip-row">
+        <span class="chip">AutoCAD</span>
+        <span class="chip">AutoCAD Map</span>
+        <span class="chip">ESRI ArcGIS</span>
+        <span class="chip">CalQuan</span>
+        <span class="chip">eSurvey CADD</span>
+        <span class="chip">DGPS Field Survey</span>
+      </div>
+    </div>
+    <ul class="cred-list reveal">
+      <li>Bachelor of Engineering (B.E.)</li>
+      <li>Postgraduate qualification in CAD &amp; GIS</li>
+      <li>DGPS survey &amp; field measurement</li>
+      <li>CAD/GIS-based preparation of plans and technical drawings</li>
+      <li>Thematic mapping &amp; spatial project planning</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Selected project experience</div>
+      <h2>Survey record</h2>
+      <p>A traverse of representative assignments — each station below marks a completed survey, diversion proposal, or clearance-support engagement.</p>
+    </div>
+
+    <div class="traverse reveal">
+      <div class="traverse-line" aria-hidden="true"></div>
+
+      <div class="station">
+        <div class="station-marker"><div class="station-dot"></div></div>
+        <div class="station-body">
+          <span class="station-id">ST-01 · CHANDRAPUR DISTRICT</span>
+          <h3>Asolamendha Project Renovation — Forest Diversion Consultancy</h3>
+          <p>Consultancy services for obtaining clearance and diversion of forest land for construction of the dam and canal network under the Asolamendha Project Renovation, under the Forest (Conservation) Act, 1980.</p>
+          <div class="station-meta">
+            <span>Area: 315.74 ha</span>
+            <span>Agreement cost: ₹1,15,26,705</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="station">
+        <div class="station-marker"><div class="station-dot"></div></div>
+        <div class="station-body">
+          <span class="station-id">ST-02 · GOSIKHURD NATIONAL PROJECT</span>
+          <h3>Ghodazari Branch Canal / Pipeline Project</h3>
+          <p>Consultancy services for obtaining clearance and diversion of forest land for construction of the Ghodazari Branch Canal/pipeline network.</p>
+          <div class="station-meta">
+            <span>Work order area: 30 ha</span>
+            <span>Final approval area: 38.8022 ha</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="station">
+        <div class="station-marker"><div class="station-dot"></div></div>
+        <div class="station-body">
+          <span class="station-id">ST-03 · CHANDRAPUR</span>
+          <h3>Chandrapur Forest Academy — Forest Diversion</h3>
+          <p>DGPS survey and preparation of the forest proposal for infrastructure development of Chandrapur Forest Academy.</p>
+          <div class="station-meta">
+            <span>Documented area: 28 ha</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="station">
+        <div class="station-marker"><div class="station-dot"></div></div>
+        <div class="station-body">
+          <span class="station-id">ST-04 · HYDERABAD</span>
+          <h3>Railway — 3rd Line, SCR Hyderabad</h3>
+          <p>DGPS survey for forest diversion work associated with laying the third railway line for South Central Railway (SCR), Hyderabad.</p>
+        </div>
+      </div>
+
+      <div class="station">
+        <div class="station-marker"><div class="station-dot"></div></div>
+        <div class="station-body">
+          <span class="station-id">ST-05 · PALASGAON SHINGRU &amp; RANTALODHI</span>
+          <h3>Village Rehabilitation Survey</h3>
+          <p>DGPS survey for forest diversion associated with rehabilitation of Palasgaon Shingru and Rantalodhi villages.</p>
+          <div class="station-meta">
+            <span>Palasgaon Shingru: 300 ha</span>
+            <span>Rantalodhi: 375 ha</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="station">
+        <div class="station-marker"><div class="station-dot"></div></div>
+        <div class="station-body">
+          <span class="station-id">ST-06 · CHANDRAPUR</span>
+          <h3>APJ Abdul Kalam Garden / Ecopark</h3>
+          <p>DGPS survey, preparation of plans and estimates for forest diversion work for the APJ Abdul Kalam Garden/Ecopark.</p>
+          <div class="station-meta">
+            <span>Project area: 20 ha</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Government &amp; institutional exposure</div>
+      <h2>Trusted across public infrastructure bodies</h2>
+    </div>
+    <div class="inst-list reveal">
+      <div class="inst-item">Vidarbha Irrigation Development Corporation</div>
+      <div class="inst-item">Gosikhurd Project / Irrigation Authorities</div>
+      <div class="inst-item">Chandrapur Forest Administration</div>
+      <div class="inst-item">Forest-Diversion Related Authorities</div>
+    </div>
+    <div class="strength-row reveal">
+      <div class="strength-item">Strong field-to-drawing capability integrating DGPS survey data with CAD/GIS outputs.</div>
+      <div class="strength-item">Specialized experience in forest-diversion surveys, proposals and clearance support.</div>
+      <div class="strength-item">Experience with sizeable project areas and diverse infrastructure requirements.</div>
+      <div class="strength-item">Exposure to irrigation, railway, rehabilitation and institutional infrastructure projects.</div>
+      <div class="strength-item">Capability to support CA land identification, survey and acquisition requirements.</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Leadership</div>
+      <h2>Led from the field, not just the office</h2>
+      <p style="color:var(--ink-soft);">GSK Infosystems is built around direct technical involvement in every assignment — from initial DGPS fieldwork through to final CAD/GIS documentation and clearance submission.</p>
+    </div>
+    <div class="proprietor-card reveal">
+      <span class="proprietor-role">Proprietor</span>
+      <div class="proprietor-name">Ajay Gulabrao Kamde</div>
+      <p style="color:var(--ink-soft); font-size:0.95rem; margin-bottom:0;">Bachelor of Engineering (B.E.) with postgraduate training in CAD &amp; GIS. Hands-on expertise in AutoCAD, AutoCAD Map, ESRI ArcGIS, CalQuan and eSurvey CADD, applied across forest-diversion, survey and land-acquisition assignments.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding:0;">
+  <div class="contact-wrap">
+    <div class="contact-panel reveal">
+      <div class="eyebrow" style="color:#e8b7a8;">Get in touch</div>
+      <h2>Start a conversation about your project</h2>
+      <p>Reach out for forest diversion consultancy, DGPS survey, CAD/GIS mapping or land acquisition support.</p>
+      <div class="contact-detail">
+        <span class="label">Office</span>
+        <span class="value">Hanfi Complex, Jatpura Gate,<br>Chandrapur, Maharashtra</span>
+        <span class="label">Mobile</span>
+        <span class="value"><a href="tel:+919607704288">+91 96077 04288</a></span>
+        <span class="label">Email</span>
+        <span class="value"><a href="mailto:gsk321@gmail.com">gsk321@gmail.com</a></span>
+      </div>
+    </div>
+    <div class="contact-form-panel reveal">
+      <h2 style="font-size:1.3rem;">Send a message</h2>
+      <p style="color:var(--ink-soft); font-size:0.92rem; margin-bottom:24px;">This form opens your email app with the details filled in — no data is stored on this site.</p>
+      <form id="contactForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" required placeholder="Location, land area, type of survey or clearance needed..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Send enquiry</button>
+        <p class="form-note">Opens your default email app addressed to gsk321@gmail.com</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <span>© <span id="year"></span> GSK Infosystems, Chandrapur.</span>
+    <span>Mapping Land · Navigating Approvals · Enabling Development</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.querySelector('nav.links');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.style.display === 'flex';
+    navLinks.style.display = isOpen ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '100%';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'var(--paper)';
+    navLinks.style.padding = '20px 28px';
+    navLinks.style.borderBottom = '1px solid var(--line)';
+    navLinks.style.gap = '18px';
+  });
+
+  // Contact form -> mailto
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('Website enquiry from ' + name);
+    const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:gsk321@gmail.com?subject=' + subject + '&body=' + body;
+  });
+
+  // Reveal on scroll
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!prefersReduced && 'IntersectionObserver' in window){
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.15});
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
